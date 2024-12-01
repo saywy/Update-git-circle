@@ -18,12 +18,18 @@ class CircleDrawer(QtWidgets.QMainWindow):
         radius = random.randint(10, 100)
         center_x = self.width() // 2
         center_y = self.height() // 2
-        self.circles.append((center_x, center_y, radius))
+        color = QtGui.QColor(
+            random.randint(0, 255),
+            random.randint(0, 255),
+            random.randint(0, 255)
+        )
+        self.circles.append((center_x, center_y, radius, color))
         self.update()
 
     def paintEvent(self, event):
         painter = QtGui.QPainter(self)
-        for x, y, radius in self.circles:
+        for x, y, radius, color in self.circles:
+            painter.setBrush(color)
             painter.drawEllipse(QtCore.QPoint(x, y), radius, radius)
 
 
