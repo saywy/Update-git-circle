@@ -7,6 +7,7 @@ class CircleDrawer(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
         self.setGeometry(100, 100, 800, 600)
+        self.setWindowTitle('Округлись!')
         central_widget = QtWidgets.QWidget(self)
         self.setCentralWidget(central_widget)
         self.pushButton = QtWidgets.QPushButton("Нажми на меня", self)
